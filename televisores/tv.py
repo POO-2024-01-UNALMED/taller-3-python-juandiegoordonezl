@@ -1,35 +1,35 @@
 class TV:
     numTV=0
     def __init__(self,marca,estado):
-        self.canal=1
-        self.precio=500
-        self.volumen=1
+        self._canal=1
+        self._precio=500
+        self._volumen=1
         self.control=None
-        self.marca=marca
-        self.estado=estado
+        self._marca=marca
+        self._estado=estado
         TV.numTV+=1
     
     def getCanal(self):
-        return self.canal
+        return self._canal
         
     def setCanal(self,l):
-        if self.estado==True:
+        if self._estado==True:
             if l>=1 and l<=120:
-                self.canal=l
+                self._canal=l
     
     def getPrecio(self):
-        return self.precio
+        return self._precio
         
     def setPrecio(self,h):
-        self.precio=h
+        self._precio=h
         
     def getVolumen(self):
-        return self.volumen
+        return self._volumen
         
     def setVolumen(self,j):
-        if self.estado==True:
+        if self._estado==True:
             if j>=0 and j<=7:
-                self.volumen=j
+                self._volumen=j
                 
     def getControl(self):
         return self.control
@@ -38,10 +38,10 @@ class TV:
         self.control=z
     
     def getMarca(self):
-        return self.marca
+        return self._marca
         
     def setMarca(self,b):
-        self.marca=b
+        self._marca=b
         
     def getNumTV():
         return TV.numTV
@@ -50,32 +50,32 @@ class TV:
         TV.numTV=y
     
     def turnOn(self):
-        if self.estado!=True:
-            self.estado=True
+        if self._estado!=True:
+            self._estado=True
     
     def turnOff(self):
-        if self.estado!=False:
-            self.estado=False
+        if self._estado!=False:
+            self._estado=False
     
     def getEstado(self):
-        return self.estado
+        return self._estado
         
     def canalUp(self):
-        if self.estado==True:
-            if self.canal<120:
-                self.canal+=1
+        if self._estado==True:
+            if self._canal<120:
+                self._canal+=1
             
     def canalDown(self):
-        if self.estado==True:
-            if self.canal>1:
-                self.canal-=1
+        if self._estado==True:
+            if self._canal>1:
+                self._canal-=1
             
     def volumenUp(self):
-        if self.estado==True:
-            if self.volumen<7:
-                self.volumen+=1
+        if self._estado==True:
+            if self._volumen<7:
+                self._volumen+=1
     
     def volumenDown(self):
-        if self.estado==True:
-            if self.volumen>0:
-                self.volumen-=1
+        if self._estado==True:
+            if self._volumen>0:
+                self._volumen-=1

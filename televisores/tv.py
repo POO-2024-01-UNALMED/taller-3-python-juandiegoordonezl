@@ -38,7 +38,7 @@ class TV:
         self.control=z
     
     def getMarca(self):
-        return self._marca
+        return self.marca
         
     def setMarca(self,b):
         self.marca=b
